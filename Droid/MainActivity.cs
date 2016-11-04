@@ -26,7 +26,7 @@ namespace HockeySDKXamarinDemo.Droid
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 
-		public const string AppID = "48aa4cf4b30a4e5e965e1992d535ff69";
+		public const string AppID = "Your App ID";
        
         protected override void OnCreate(Bundle bundle)
 		{
@@ -147,11 +147,6 @@ namespace HockeySDKXamarinDemo.Droid
                 return getDescription();
             }
         }
-
-        //public override bool ShouldAutoUploadCrashes()
-        //{
-        //    return true;
-        //}
 
         public string getDescription()
         {

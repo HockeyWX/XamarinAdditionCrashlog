@@ -15,17 +15,17 @@ namespace HockeySDKXamarinDemo.iOS
 	[Register("AppDelegate")]
 	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
-        const string AppID = "48258e6a962a4325bb7c9210c80da5a8";
+        const string AppID = "Your App ID";
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             DesciptionDelegate de = new DesciptionDelegate();
-            de.description = "123";
+            de.description = "This is John";
             var manager = BITHockeyManager.SharedHockeyManager;
             manager.Configure(AppID, de);
-            manager.UserEmail = "123";
-            manager.UserId = "123";
-            manager.UserName = "123";
+            manager.UserEmail = "v-zhjoh@microsoft.com";
+            manager.UserId = "v-zhjoh";
+            manager.UserName = "John Zhang";
             manager.DebugLogEnabled = true;
             manager.StartManager();
             manager.Authenticator.AuthenticateInstallation(); // This line is obsolete in crash only builds
