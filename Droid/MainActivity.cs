@@ -21,7 +21,6 @@ namespace HockeySDKXamarinDemo.Droid
 			base.OnCreate(bundle);
 
             HockeyApp.Android.Utils.HockeyLog.LogLevel = 3;
-
             MyCrashManagerListener listener = new MyCrashManagerListener();
             listener.userID = "v-zhjoh";
             listener.userContact = "v-zhjoh@microsoft.com";
