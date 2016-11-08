@@ -14,7 +14,7 @@ namespace HockeySDKXamarinDemo.Droid
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 
-		public const string AppID = "48aa4cf4b30a4e5e965e1992d535ff69";
+		public const string AppID = "app id";
        
         protected override void OnCreate(Bundle bundle)
 		{
@@ -26,19 +26,13 @@ namespace HockeySDKXamarinDemo.Droid
             listener.userID = "v-zhjoh";
             listener.userContact = "v-zhjoh@microsoft.com";
             Android.Util.Log.Debug("HockeyApp","Add Debug info into Description");
-            
-            
-           
+
             CrashManager.Register(this, AppID, listener);
             //CrashManager.Register(this, AppID);
-
             UpdateManager.Register(this, AppID);
             FeedbackManager.Register(this, AppID);
 
-            
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
-
 			LoadApplication(CreateApp());
 		}
 
@@ -135,10 +129,8 @@ namespace HockeySDKXamarinDemo.Droid
         public string getDescription()
         {
             string description = "";
-
             try
             {
-
                 Java.Lang.Process process = Runtime.GetRuntime().Exec("logcat -d HockeyApp:D *:S");
 
                 BufferedReader bufferedReader =
@@ -158,7 +150,6 @@ namespace HockeySDKXamarinDemo.Droid
             catch (IOException e)
             {
             }
-
             return description;
         }
 
