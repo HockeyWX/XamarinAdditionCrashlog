@@ -30,8 +30,8 @@ namespace HockeySDKXamarinDemo.iOS
             manager.StartManager();
             manager.Authenticator.AuthenticateInstallation(); // This line is obsolete in crash only builds
 
-            
 
+           
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(CreateApp());

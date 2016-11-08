@@ -1,32 +1,20 @@
 ﻿using System;
 
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using Android.OS;
-using System.Collections.Generic;
 using Java.Lang;
 using Java.IO;
 using HockeyApp.Android;
 
-
-#if HOCKEYAPP
-using HockeyApp.Android;
-#elif INSIGHTS
-using Xamarin;
-#endif
-using System.Threading.Tasks;
-
 namespace HockeySDKXamarinDemo.Droid
 {
-	[Activity(Label = "TestHockeyApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "TestHockeyApp.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 
-		public const string AppID = "Your App ID";
+		public const string AppID = "48aa4cf4b30a4e5e965e1992d535ff69";
        
         protected override void OnCreate(Bundle bundle)
 		{
@@ -38,12 +26,16 @@ namespace HockeySDKXamarinDemo.Droid
             listener.userID = "v-zhjoh";
             listener.userContact = "v-zhjoh@microsoft.com";
             Android.Util.Log.Debug("HockeyApp","Add Debug info into Description");
+            
+            
            
             CrashManager.Register(this, AppID, listener);
             //CrashManager.Register(this, AppID);
 
             UpdateManager.Register(this, AppID);
             FeedbackManager.Register(this, AppID);
+
+            
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
